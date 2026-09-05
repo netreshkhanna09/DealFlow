@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DealFlow | Razorpay Agentic Commerce Platform</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="logo-area">
+        <div class="logo-icon">DF</div>
+        <div class="logo-title">
+          <h1>DealFlow</h1>
+          <div class="logo-subtitle">Two-Sided AI Agentic Commerce & Razorpay Gateway</div>
+        </div>
+      </div>
+      <div class="header-badges">
+        <span class="badge badge-rzp">⚡ Razorpay Track 01</span>
+        <span class="badge badge-live" id="llmStatusBadge"><span class="pulse-dot"></span> Multi-Agent Live</span>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+      <button class="tab-btn active" onclick="switchTab('dashboard')">🎮 Live Control Console</button>
+      <button class="tab-btn" onclick="switchTab('history')">📜 Audit Trail & History</button>
+    </div>
+
+    <!-- TAB 1: Live Control Console -->
+    <div id="tab-dashboard" class="tab-content">
+      
+      <!-- Multi-Agent Graph Diagram -->
+      <div class="glass-card" style="margin-bottom: 1.5rem;">
+        <div class="card-header">
+          <div class="card-title">🤖 Active Agent Pipeline Topology</div>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">Real-time LangGraph Routing State</span>
+        </div>
+
+        <div class="agent-flow-graph">
+          <div class="agent-node" id="node-SCOUT">
+            <div class="node-role">Buyer Agent</div>
+            <div class="node-name">SCOUT</div>
+          </div>
+          <div class="agent-node" id="node-VENDOR">
+            <div class="node-role">Merchant Agent</div>
+            <div class="node-name">VENDOR</div>
+          </div>
+          <div class="agent-node" id="node-JUDGE">
+            <div class="node-role">Critic Referee</div>
+            <div class="node-name">JUDGE</div>
+          </div>
+          <div class="agent-node" id="node-WARDEN">
+            <div class="node-role">Risk Officer</div>
+            <div class="node-name">WARDEN</div>
+          </div>
+          <div class="agent-node" id="node-TELLER">
+            <div class="node-role">Cashier Agent</div>
+            <div class="node-name">TELLER</div>
+          </div>
+          <div class="agent-node" id="node-SCRIBE">
+            <div class="node-role">Audit Keeper</div>
+            <div class="node-name">SCRIBE</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Layout Grid -->
+      <div class="grid-main">
+        
+        <!-- Left Column: Input Console -->
+        <div class="glass-card">
+          <div class="card-header">
+            <div class="card-title">🛍️ Agent Commerce Console</div>
+          </div>
+
+          <div class="prompt-area">
+            <label for="promptInput">Buyer Intent / Product Request</label>
+            <div class="input-group">
+              <input type="text" id="promptInput" class="prompt-input" placeholder="e.g. Wireless ANC headphones under ₹3500" value="Wireless ANC headphones under ₹3500">
+              <button id="negotiateBtn" class="btn-primary" onclick="runNegotiation()">
+                <span>Run DealFlow</span> ➔
+              </button>
+            </div>
+          </div>
+
+          <!-- Negotiated Offer Output / Fallback Card -->
+          <div id="outputArea" style="margin-top: 1.5rem;">
+            <div style="font-size: 0.85rem; color: var(--text-muted); text-align: center; padding: 2rem; border: 1px dashed var(--border-glass); border-radius: 10px;">
+              Enter a product request to execute the multi-agent negotiation engine.
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Live Decision Trace Log -->
+        <div class="glass-card">
+          <div class="card-header">
+            <div class="card-title">🔍 Live Multi-Agent Audit Trace</div>
+            <button class="chip-btn" onclick="clearConsole()" style="font-size: 0.75rem;">Clear Log</button>
+          </div>
+
+          <div id="logConsole" class="log-console">
+            <div class="log-entry SYSTEM">
+              <div class="log-header">
+                <span class="log-agent">SYSTEM</span>
+                <span>Ready</span>
+              </div>
+              <div class="log-msg">DealFlow multi-agent environment initialized. Awaiting deal negotiation request...</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB 2: Audit Trail & History -->
+    <div id="tab-history" class="tab-content hidden">
+      <div class="glass-card">
+        <div class="card-header">
+          <div class="card-title">📜 Historical Negotiation Audit Trail</div>
+          <button class="btn-primary" onclick="loadHistory()" style="padding: 0.4rem 1rem; font-size: 0.82rem;">Refresh DB</button>
+        </div>
+
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Prompt</th>
+              <th>Status</th>
+              <th>Price (INR)</th>
+              <th>Razorpay Order</th>
+              <th>Loops</th>
+              <th>Timestamp</th>
+            </tr>
+          </thead>
+          <tbody id="historyBody">
+            <tr>
+              <td colspan="7" style="text-align: center; color: var(--text-muted); padding: 2rem;">Loading audit records from SQLite...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

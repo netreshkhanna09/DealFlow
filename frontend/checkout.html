@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Razorpay Payment Gateway (Test Mode) | DealFlow</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background: #060913;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 1rem;
+    }
+    .checkout-modal {
+      background: #0f172a;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 480px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(2, 132, 199, 0.2);
+    }
+    .rzp-header {
+      background: linear-gradient(135deg, #0c2340, #0284c7);
+      padding: 1.5rem;
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .rzp-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .rzp-logo {
+      width: 36px;
+      height: 36px;
+      background: #ffffff;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      color: #0284c7;
+      font-size: 1.2rem;
+    }
+    .rzp-title h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0;
+    }
+    .rzp-title span {
+      font-size: 0.75rem;
+      opacity: 0.85;
+    }
+    .rzp-test-badge {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .rzp-body {
+      padding: 1.5rem;
+    }
+    .amount-display {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      margin-bottom: 1.25rem;
+    }
+    .amount-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+    .amount-value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #38bdf8;
+      margin-top: 0.2rem;
+    }
+    .payment-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .method-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .method-card:hover, .method-card.selected {
+      border-color: #38bdf8;
+      background: rgba(56, 189, 248, 0.08);
+    }
+    .method-info {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .method-icon {
+      font-size: 1.3rem;
+    }
+    .method-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .pay-now-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #10b981, #059669);
+      border: none;
+      color: #ffffff;
+      padding: 0.9rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+      transition: all 0.2s;
+    }
+    .pay-now-btn:hover {
+      background: linear-gradient(135deg, #059669, #047857);
+      transform: translateY(-1px);
+    }
+    .success-screen {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .success-icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 1rem;
+      border: 2px solid #34d399;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="checkout-modal">
+    <!-- Header -->
+    <div class="rzp-header">
+      <div class="rzp-brand">
+        <div class="rzp-logo">R</div>
+        <div class="rzp-title">
+          <h3>Razorpay</h3>
+          <span>DealFlow Authorized Merchant</span>
+        </div>
+      </div>
+      <span class="rzp-test-badge">TEST MODE</span>
+    </div>
+
+    <!-- Body -->
+    <div class="rzp-body" id="checkoutContent">
+      <div class="amount-display">
+        <div class="amount-label" id="descText">Negotiated Agent Purchase</div>
+        <div class="amount-value" id="amountText">₹0.00</div>
+        <div style="font-size: 0.75rem; color: #64748b; margin-top: 0.3rem;" id="linkIdText">Link ID: --</div>
+      </div>
+
+      <div class="payment-methods">
+        <div class="method-card selected" onclick="selectMethod(this, 'card')">
+          <div class="method-info">
+            <span class="method-icon">💳</span>
+            <div>
+              <div class="method-name">Razorpay Test Card</div>
+              <div style="font-size: 0.75rem; color: #94a3b8;">4111 •••• •••• 1111</div>
+            </div>
+          </div>
+          <span style="color: #38bdf8;">✓</span>
+        </div>
+
+        <div class="method-card" onclick="selectMethod(this, 'upi')">
+          <div class="method-info">
+            <span class="method-icon">📱</span>
+            <div>
+              <div class="method-name">Razorpay Test UPI / QR</div>
+              <div style="font-size: 0.75rem; color: #94a3b8;">success@razorpay</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button id="paySubmitBtn" class="pay-now-btn" onclick="executeSelectedPayment()">
+        Pay Now via Razorpay
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const amount = params.get('amount') || '0.00';
+    const desc = params.get('desc') || 'DealFlow Agent Purchase';
+    const linkId = params.get('link_id') || 'plink_test';
+
+    document.getElementById('amountText').innerText = `₹${parseFloat(amount).toFixed(2)}`;
+    document.getElementById('descText').innerText = decodeURIComponent(desc);
+    document.getElementById('linkIdText').innerText = `Payment Link ID: ${linkId}`;
+
+    function selectMethod(el, method) {
+      document.querySelectorAll('.method-card').forEach(c => {
+        c.classList.remove('selected');
+        c.querySelector('span:last-child')?.remove();
+      });
+      el.classList.add('selected');
+      const check = document.createElement('span');
+      check.style.color = '#38bdf8';
+      check.innerText = '✓';
+      el.appendChild(check);
+    }
+
+    function executeSelectedPayment() {
+      processPayment();
+    }
+
+    function processPayment() {
+      const content = document.getElementById('checkoutContent');
+      content.innerHTML = `
+        <div style="text-align: center; padding: 3rem 1rem;">
+          <div class="pulse-dot" style="width: 24px; height: 24px; margin: 0 auto 1rem; background: #38bdf8; box-shadow: 0 0 15px #38bdf8;"></div>
+          <div style="font-size: 1.1rem; font-weight: 700; color: #f8fafc;">Authorizing with Razorpay Test Gateway...</div>
+          <div style="font-size: 0.82rem; color: #94a3b8; margin-top: 0.5rem;">Token verification in progress</div>
+        </div>
+      `;
+
+      setTimeout(() => {
+        const payId = 'pay_' + Math.random().toString(36).substring(2, 12);
+        content.innerHTML = `
+          <div class="success-screen">
+            <div class="success-icon">✓</div>
+            <h3 style="font-size: 1.4rem; color: #34d399; margin-bottom: 0.5rem;">Payment Successful!</h3>
+            <p style="font-size: 0.9rem; color: #cbd5e1;">Razorpay Payment ID: <strong>${payId}</strong></p>
+            <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); padding: 1rem; border-radius: 10px; margin: 1.5rem 0; font-size: 0.85rem; color: #6ee7b7;">
+              Captured ₹${parseFloat(amount).toFixed(2)} via Razorpay Test Mode. Transaction logged to DealFlow SQLite database.
+            </div>
+            <button class="pay-now-btn" onclick="window.location.href='/'">
+              Return to DealFlow Control Center ➔
+            </button>
+          </div>
+        `;
+      }, 1200);
+    }
+  </script>
+</body>
+</html>

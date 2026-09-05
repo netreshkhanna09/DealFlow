@@ -1,0 +1,187 @@
+[
+  {
+    "id": "prod_001",
+    "name": "AcousticPro ANC Wireless Headphones",
+    "category": "audio",
+    "base_price": 2999,
+    "msrp": 3999,
+    "stock": 15,
+    "description": "Active Noise Cancelling wireless over-ear headphones with 30-hour battery life.",
+    "tags": ["audio", "headphones", "anc", "wireless", "premium", "music", "headset"],
+    "upsell_options": [
+      {
+        "id": "upsell_case_01",
+        "name": "Hard-Shell Travel Carrying Case",
+        "price": 399,
+        "type": "accessory",
+        "pitch": "Protect your ANC headphones on the go with a waterproof hard-shell travel case."
+      },
+      {
+        "id": "upsell_warranty_01",
+        "name": "2-Year Extended Protection Plan",
+        "price": 299,
+        "type": "protection",
+        "pitch": "Comprehensive coverage including accidental drop and spill protection."
+      }
+    ]
+  },
+  {
+    "id": "prod_002",
+    "name": "SoundPulse Bluetooth Earbuds",
+    "category": "audio",
+    "base_price": 1499,
+    "msrp": 1999,
+    "stock": 30,
+    "description": "True wireless stereo earbuds with low latency mode and IPX5 water resistance.",
+    "tags": ["audio", "earbuds", "wireless", "budget", "music", "pods"],
+    "upsell_options": [
+      {
+        "id": "upsell_tips_01",
+        "name": "Memory Foam Ear Tips Set (3 Sizes)",
+        "price": 199,
+        "type": "accessory",
+        "pitch": "Enhanced noise isolation and all-day comfort memory foam tips."
+      }
+    ]
+  },
+  {
+    "id": "prod_003",
+    "name": "HyperGlide Ergonomic Wireless Mouse",
+    "category": "peripherals",
+    "base_price": 1899,
+    "msrp": 2499,
+    "stock": 22,
+    "description": "Multi-device wireless mouse with high-precision optical sensor and thumb rest.",
+    "tags": ["peripherals", "mouse", "ergonomic", "wireless", "office", "gaming"],
+    "upsell_options": [
+      {
+        "id": "upsell_pad_01",
+        "name": "Extended XL RGB Gaming Mouse Pad",
+        "price": 499,
+        "type": "accessory",
+        "pitch": "Smooth micro-weave cloth surface with non-slip rubber base."
+      }
+    ]
+  },
+  {
+    "id": "prod_004",
+    "name": "ApexType RGB Mechanical Keyboard",
+    "category": "peripherals",
+    "base_price": 3499,
+    "msrp": 4599,
+    "stock": 10,
+    "description": "Hot-swappable mechanical keyboard with linear red switches and per-key RGB.",
+    "tags": ["peripherals", "keyboard", "mechanical", "rgb", "gaming", "typing"],
+    "upsell_options": [
+      {
+        "id": "upsell_wrist_01",
+        "name": "Memory Foam Ergonomic Wrist Rest",
+        "price": 349,
+        "type": "accessory",
+        "pitch": "Reduces wrist fatigue during long gaming or typing sessions."
+      },
+      {
+        "id": "upsell_switch_01",
+        "name": "Custom Switch & Keycap Puller Kit",
+        "price": 199,
+        "type": "accessory",
+        "pitch": "Essential toolkit for hot-swapping and cleaning keycaps."
+      }
+    ]
+  },
+  {
+    "id": "prod_005",
+    "name": "UltraView 4K USB-C Hub & Dock",
+    "category": "accessories",
+    "base_price": 2499,
+    "msrp": 3299,
+    "stock": 18,
+    "description": "7-in-1 USB-C hub with HDMI 4K@60Hz, 100W Power Delivery, and SD card reader.",
+    "tags": ["accessories", "hub", "usbc", "dock", "office", "laptop", "adapter"],
+    "upsell_options": [
+      {
+        "id": "upsell_cable_01",
+        "name": "Braided 100W USB-C PD Cable (2m)",
+        "price": 299,
+        "type": "accessory",
+        "pitch": "Ultra-durable nylon braided fast-charging cable."
+      }
+    ]
+  },
+  {
+    "id": "prod_006",
+    "name": "DevPulse Pro AI API Subscription (Annual)",
+    "category": "services",
+    "base_price": 4999,
+    "msrp": 6999,
+    "stock": 100,
+    "description": "Enterprise-grade AI inference API subscription with 1M tokens/mo.",
+    "tags": ["services", "ai", "api", "subscription", "developer", "software", "code"],
+    "upsell_options": [
+      {
+        "id": "upsell_priority_01",
+        "name": "Dedicated Low-Latency Compute Gateway",
+        "price": 999,
+        "type": "addon",
+        "pitch": "Guaranteed sub-50ms SLA and dedicated throughput pipeline."
+      }
+    ]
+  },
+  {
+    "id": "prod_007",
+    "name": "AirStride Cushion Performance Running Shoes",
+    "category": "footwear",
+    "base_price": 4499,
+    "msrp": 5999,
+    "stock": 25,
+    "description": "Breathable mesh running shoes with responsive nitrogen foam cushioning.",
+    "tags": ["footwear", "shoes", "shoe", "running", "sneakers", "sports", "apparel", "marathon"],
+    "upsell_options": [
+      {
+        "id": "upsell_socks_01",
+        "name": "Performance Anti-Blister Running Socks (3-Pack)",
+        "price": 399,
+        "type": "accessory",
+        "pitch": "Moisture-wicking anti-microbial arch support socks."
+      }
+    ]
+  },
+  {
+    "id": "prod_008",
+    "name": "ChronoPulse AMOLED Smart Fitness Watch",
+    "category": "wearables",
+    "base_price": 3799,
+    "msrp": 4999,
+    "stock": 20,
+    "description": "1.43-inch AMOLED display smart watch with SpO2, heart rate, and GPS tracking.",
+    "tags": ["wearables", "watch", "smartwatch", "fitness", "tracker", "health", "time"],
+    "upsell_options": [
+      {
+        "id": "upsell_strap_01",
+        "name": "Quick-Release Milanese Loop Metal Strap",
+        "price": 499,
+        "type": "accessory",
+        "pitch": "Premium magnetic stainless steel watch band."
+      }
+    ]
+  },
+  {
+    "id": "prod_009",
+    "name": "Enterprise AI Cluster Server Setup",
+    "category": "services",
+    "base_price": 24999,
+    "msrp": 29999,
+    "stock": 5,
+    "description": "Dedicated Enterprise AI server cluster deployment with GPU acceleration.",
+    "tags": ["services", "enterprise", "workstation", "server", "cluster", "ai", "setup"],
+    "upsell_options": [
+      {
+        "id": "upsell_sla_01",
+        "name": "24/7 Priority SLA Support Package",
+        "price": 4999,
+        "type": "support",
+        "pitch": "Dedicated infrastructure engineer with 15-min response SLA."
+      }
+    ]
+  }
+]
