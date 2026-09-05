@@ -7,29 +7,29 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <div class="container">
-    <!-- Header -->
+    <!-- Razorpay Header -->
     <header>
       <div class="logo-area">
-        <div class="logo-icon">DF</div>
+        <div class="logo-icon">R</div>
         <div class="logo-title">
           <h1>DealFlow</h1>
-          <div class="logo-subtitle">Two-Sided AI Agentic Commerce & Razorpay Gateway</div>
+          <div class="logo-subtitle">Razorpay Agentic Commerce & Dynamic Negotiation Gateway</div>
         </div>
       </div>
       <div class="header-badges">
-        <span class="badge badge-rzp">⚡ Razorpay Track 01</span>
-        <span class="badge badge-live" id="llmStatusBadge"><span class="pulse-dot"></span> Multi-Agent Live</span>
+        <span class="badge badge-rzp">⚡ Razorpay Track 01: AI Growth</span>
+        <span class="badge badge-live" id="llmStatusBadge"><span class="pulse-dot"></span> Agent Pipeline Active</span>
       </div>
     </header>
 
     <!-- Navigation Tabs -->
     <div class="nav-tabs">
-      <button class="tab-btn active" onclick="switchTab('dashboard')">🎮 Live Control Console</button>
+      <button class="tab-btn active" onclick="switchTab('dashboard')">🎮 Live Agent Console</button>
       <button class="tab-btn" onclick="switchTab('history')">📜 Audit Trail & History</button>
     </div>
 
@@ -39,8 +39,8 @@
       <!-- Multi-Agent Graph Diagram -->
       <div class="glass-card" style="margin-bottom: 1.5rem;">
         <div class="card-header">
-          <div class="card-title">🤖 Active Agent Pipeline Topology</div>
-          <span style="font-size: 0.8rem; color: var(--text-muted);">Real-time LangGraph Routing State</span>
+          <div class="card-title">🤖 Active Agent Topology Pipeline</div>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">Real-time Multi-Agent State Routing</span>
         </div>
 
         <div class="agent-flow-graph">
@@ -61,7 +61,7 @@
             <div class="node-name">WARDEN</div>
           </div>
           <div class="agent-node" id="node-TELLER">
-            <div class="node-role">Cashier Agent</div>
+            <div class="node-role">Razorpay Cashier</div>
             <div class="node-name">TELLER</div>
           </div>
           <div class="agent-node" id="node-SCRIBE">
@@ -77,11 +77,11 @@
         <!-- Left Column: Input Console -->
         <div class="glass-card">
           <div class="card-header">
-            <div class="card-title">🛍️ Agent Commerce Console</div>
+            <div class="card-title">🛍️ Agent Commerce Input</div>
           </div>
 
           <div class="prompt-area">
-            <label for="promptInput">Buyer Intent / Product Request</label>
+            <label for="promptInput">Buyer Product Request / Intent</label>
             <div class="input-group">
               <input type="text" id="promptInput" class="prompt-input" placeholder="e.g. Wireless ANC headphones under ₹3500" value="Wireless ANC headphones under ₹3500">
               <button id="negotiateBtn" class="btn-primary" onclick="runNegotiation()">
@@ -92,8 +92,8 @@
 
           <!-- Negotiated Offer Output / Fallback Card -->
           <div id="outputArea" style="margin-top: 1.5rem;">
-            <div style="font-size: 0.85rem; color: var(--text-muted); text-align: center; padding: 2rem; border: 1px dashed var(--border-glass); border-radius: 10px;">
-              Enter a product request to execute the multi-agent negotiation engine.
+            <div style="font-size: 0.85rem; color: var(--text-muted); text-align: center; padding: 2.2rem; border: 1px dashed var(--rzp-border); border-radius: 12px; background: rgba(4, 9, 20, 0.4);">
+              Enter any product query above to trigger the multi-agent negotiation pipeline.
             </div>
           </div>
         </div>
@@ -101,7 +101,7 @@
         <!-- Right Column: Live Decision Trace Log -->
         <div class="glass-card">
           <div class="card-header">
-            <div class="card-title">🔍 Live Multi-Agent Audit Trace</div>
+            <div class="card-title">🔍 Live Agent Execution Audit Trace</div>
             <button class="chip-btn" onclick="clearConsole()" style="font-size: 0.75rem;">Clear Log</button>
           </div>
 
@@ -124,7 +124,7 @@
       <div class="glass-card">
         <div class="card-header">
           <div class="card-title">📜 Historical Negotiation Audit Trail</div>
-          <button class="btn-primary" onclick="loadHistory()" style="padding: 0.4rem 1rem; font-size: 0.82rem;">Refresh DB</button>
+          <button class="btn-primary" onclick="loadHistory()" style="padding: 0.45rem 1.1rem; font-size: 0.82rem;">Refresh Records</button>
         </div>
 
         <table class="history-table">
