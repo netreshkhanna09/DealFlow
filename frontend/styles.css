@@ -1,20 +1,23 @@
-/* Razorpay Official Design System & Glassmorphism Theme for DealFlow */
+/* Razorpay Official Light Mode Design System - razorpay.com Exact Theme */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap');
 
 :root {
-  --rzp-navy-dark: #040914;
-  --rzp-navy-card: rgba(10, 22, 46, 0.75);
-  --rzp-navy-hover: rgba(16, 35, 71, 0.85);
-  --rzp-blue-primary: #0066ff;
-  --rzp-blue-cyan: #00c2ff;
-  --rzp-blue-light: #38bdf8;
+  --rzp-bg-body: #f8fafc;
+  --rzp-bg-card: #ffffff;
+  --rzp-bg-subtle: #f1f5f9;
+  --rzp-blue-primary: #0b5cff;
+  --rzp-blue-hover: #0047cc;
+  --rzp-blue-light: #eff6ff;
+  --rzp-blue-border: #bfdbfe;
+  --rzp-navy-heading: #0b1426;
+  --rzp-text-body: #334155;
+  --rzp-text-muted: #64748b;
   --rzp-green: #10b981;
   --rzp-amber: #f59e0b;
-  --rzp-rose: #f43f5e;
-  --rzp-border: rgba(0, 102, 255, 0.22);
-  --rzp-border-hover: rgba(0, 194, 255, 0.5);
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
+  --rzp-rose: #ef4444;
+  --rzp-border: #e2e8f0;
+  --rzp-shadow: 0 4px 20px -2px rgba(11, 20, 38, 0.08), 0 2px 6px -1px rgba(11, 20, 38, 0.04);
+  --rzp-shadow-hover: 0 12px 30px -4px rgba(11, 20, 38, 0.12), 0 4px 12px -2px rgba(11, 20, 38, 0.06);
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
 }
@@ -26,36 +29,33 @@
 }
 
 body {
-  background-color: var(--rzp-navy-dark);
+  background-color: var(--rzp-bg-body);
   background-image: 
-    radial-gradient(circle at 15% 15%, rgba(0, 102, 255, 0.18) 0px, transparent 45%),
-    radial-gradient(circle at 85% 85%, rgba(0, 194, 255, 0.15) 0px, transparent 45%),
-    linear-gradient(to bottom, #040914 0%, #060e24 100%);
-  color: var(--text-main);
+    radial-gradient(circle at 10% 10%, rgba(11, 92, 255, 0.04) 0px, transparent 40%),
+    radial-gradient(circle at 90% 90%, rgba(11, 92, 255, 0.03) 0px, transparent 40%);
+  color: var(--rzp-text-body);
   font-family: var(--font-sans);
   min-height: 100vh;
   line-height: 1.5;
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 1.5rem 2rem;
 }
 
-/* Header - Razorpay Style */
+/* Header - Razorpay Official Light Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
-  background: rgba(6, 14, 36, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  padding: 1.1rem 1.8rem;
+  background: #ffffff;
   border: 1px solid var(--rzp-border);
   border-radius: 16px;
   margin-bottom: 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 102, 255, 0.15);
+  box-shadow: var(--rzp-shadow);
 }
 
 .logo-area {
@@ -65,9 +65,9 @@ header {
 }
 
 .logo-icon {
-  width: 46px;
-  height: 46px;
-  background: linear-gradient(135deg, var(--rzp-blue-primary), var(--rzp-blue-cyan));
+  width: 44px;
+  height: 44px;
+  background: var(--rzp-blue-primary);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -75,21 +75,19 @@ header {
   font-weight: 900;
   font-size: 1.4rem;
   color: #ffffff;
-  box-shadow: 0 0 25px rgba(0, 194, 255, 0.5);
+  box-shadow: 0 4px 14px rgba(11, 92, 255, 0.35);
 }
 
 .logo-title h1 {
-  font-size: 1.65rem;
+  font-size: 1.6rem;
   font-weight: 800;
   letter-spacing: -0.5px;
-  background: linear-gradient(to right, #ffffff 0%, #93c5fd 60%, var(--rzp-blue-cyan) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--rzp-navy-heading);
 }
 
 .logo-subtitle {
   font-size: 0.82rem;
-  color: var(--text-muted);
+  color: var(--rzp-text-muted);
 }
 
 .header-badges {
@@ -109,31 +107,30 @@ header {
 }
 
 .badge-rzp {
-  background: rgba(0, 102, 255, 0.18);
-  color: #38bdf8;
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  box-shadow: 0 0 15px rgba(0, 102, 255, 0.2);
+  background: var(--rzp-blue-light);
+  color: var(--rzp-blue-primary);
+  border: 1px solid var(--rzp-blue-border);
 }
 
 .badge-live {
-  background: rgba(16, 185, 129, 0.15);
-  color: #34d399;
-  border: 1px solid rgba(52, 211, 153, 0.35);
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
 }
 
 .pulse-dot {
   width: 9px;
   height: 9px;
-  background-color: #34d399;
+  background-color: #10b981;
   border-radius: 50%;
-  box-shadow: 0 0 10px #34d399;
+  box-shadow: 0 0 8px #10b981;
   animation: pulse 1.8s infinite;
 }
 
 @keyframes pulse {
-  0% { opacity: 0.4; transform: scale(0.9); }
+  0% { opacity: 0.5; transform: scale(0.95); }
   50% { opacity: 1; transform: scale(1.2); }
-  100% { opacity: 0.4; transform: scale(0.9); }
+  100% { opacity: 0.5; transform: scale(0.95); }
 }
 
 /* Nav Tabs */
@@ -144,28 +141,29 @@ header {
 }
 
 .tab-btn {
-  background: var(--rzp-navy-card);
+  background: #ffffff;
   border: 1px solid var(--rzp-border);
-  color: var(--text-muted);
+  color: var(--rzp-text-muted);
   padding: 0.7rem 1.4rem;
   border-radius: 12px;
   cursor: pointer;
   font-size: 0.92rem;
   font-weight: 600;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .tab-btn:hover {
-  color: var(--text-main);
-  background: var(--rzp-navy-hover);
-  border-color: var(--rzp-blue-cyan);
+  color: var(--rzp-navy-heading);
+  background: var(--rzp-bg-subtle);
+  border-color: #cbd5e1;
 }
 
 .tab-btn.active {
   color: #ffffff;
-  background: linear-gradient(135deg, rgba(0, 102, 255, 0.35), rgba(0, 194, 255, 0.35));
-  border-color: var(--rzp-blue-cyan);
-  box-shadow: 0 0 20px rgba(0, 102, 255, 0.3);
+  background: var(--rzp-blue-primary);
+  border-color: var(--rzp-blue-primary);
+  box-shadow: 0 4px 14px rgba(11, 92, 255, 0.35);
 }
 
 /* Layout Grid */
@@ -182,20 +180,19 @@ header {
   }
 }
 
-/* Glass Card */
+/* White Razorpay Card */
 .glass-card {
-  background: var(--rzp-navy-card);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: #ffffff;
   border: 1px solid var(--rzp-border);
   border-radius: 18px;
   padding: 1.6rem;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
-  transition: border-color 0.3s ease;
+  box-shadow: var(--rzp-shadow);
+  transition: all 0.25s ease;
 }
 
 .glass-card:hover {
-  border-color: var(--rzp-border-hover);
+  box-shadow: var(--rzp-shadow-hover);
+  border-color: #cbd5e1;
 }
 
 .card-header {
@@ -206,12 +203,12 @@ header {
 }
 
 .card-title {
-  font-size: 1.2rem;
+  font-size: 1.18rem;
   font-weight: 700;
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  color: #f8fafc;
+  color: var(--rzp-navy-heading);
 }
 
 /* Multi-Agent Graph Diagram */
@@ -219,7 +216,7 @@ header {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 0.6rem;
-  background: rgba(4, 9, 20, 0.8);
+  background: var(--rzp-bg-subtle);
   border: 1px solid var(--rzp-border);
   border-radius: 14px;
   padding: 1.1rem 0.6rem;
@@ -227,47 +224,49 @@ header {
 }
 
 .agent-node {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: #ffffff;
+  border: 1px solid var(--rzp-border);
   border-radius: 12px;
   padding: 0.85rem 0.5rem;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .agent-node .node-role {
   font-size: 0.68rem;
-  color: var(--text-muted);
+  color: var(--rzp-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  font-weight: 600;
 }
 
 .agent-node .node-name {
   font-size: 0.88rem;
   font-weight: 800;
   margin-top: 0.25rem;
-  color: #e2e8f0;
+  color: var(--rzp-navy-heading);
 }
 
 .agent-node.active {
-  border-color: var(--rzp-blue-cyan);
-  background: rgba(0, 194, 255, 0.18);
-  box-shadow: 0 0 20px rgba(0, 194, 255, 0.45);
+  border-color: var(--rzp-blue-primary);
+  background: var(--rzp-blue-light);
+  box-shadow: 0 4px 12px rgba(11, 92, 255, 0.25);
   transform: translateY(-2px);
 }
 
 .agent-node.active .node-name {
-  color: #38bdf8;
+  color: var(--rzp-blue-primary);
 }
 
 .agent-node.done {
   border-color: var(--rzp-green);
-  background: rgba(16, 185, 129, 0.12);
+  background: #ecfdf5;
 }
 
 .agent-node.vetoed {
   border-color: var(--rzp-rose);
-  background: rgba(244, 63, 94, 0.18);
+  background: #fef2f2;
 }
 
 /* Prompt Form */
@@ -279,7 +278,7 @@ header {
   display: block;
   font-size: 0.88rem;
   font-weight: 600;
-  color: var(--text-muted);
+  color: var(--rzp-navy-heading);
   margin-bottom: 0.55rem;
 }
 
@@ -290,23 +289,24 @@ header {
 
 .prompt-input {
   flex: 1;
-  background: rgba(4, 9, 20, 0.85);
+  background: #ffffff;
   border: 1px solid var(--rzp-border);
   border-radius: 12px;
   padding: 0.85rem 1.1rem;
-  color: var(--text-main);
+  color: var(--rzp-navy-heading);
   font-size: 0.98rem;
   outline: none;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
 }
 
 .prompt-input:focus {
-  border-color: var(--rzp-blue-cyan);
-  box-shadow: 0 0 15px rgba(0, 194, 255, 0.3);
+  border-color: var(--rzp-blue-primary);
+  box-shadow: 0 0 0 3px rgba(11, 92, 255, 0.15);
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--rzp-blue-primary) 0%, var(--rzp-blue-cyan) 100%);
+  background: var(--rzp-blue-primary);
   border: none;
   color: #ffffff;
   padding: 0.85rem 1.6rem;
@@ -314,16 +314,16 @@ header {
   font-weight: 700;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 0 4px 20px rgba(0, 102, 255, 0.4);
+  box-shadow: 0 4px 14px rgba(11, 92, 255, 0.35);
 }
 
 .btn-primary:hover {
-  opacity: 0.94;
-  box-shadow: 0 0 25px rgba(0, 194, 255, 0.6);
+  background: var(--rzp-blue-hover);
+  box-shadow: 0 6px 20px rgba(11, 92, 255, 0.45);
   transform: translateY(-1px);
 }
 
@@ -334,8 +334,8 @@ header {
 
 /* Log Console */
 .log-console {
-  background: #030712;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0f172a;
+  border: 1px solid #1e293b;
   border-radius: 14px;
   padding: 1.1rem;
   font-family: var(--font-mono);
@@ -350,24 +350,24 @@ header {
 .log-entry {
   padding: 0.6rem 0.85rem;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.02);
-  border-left: 3.5px solid var(--rzp-border);
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3.5px solid var(--rzp-blue-primary);
   line-height: 1.45;
 }
 
-.log-entry.SCOUT { border-left-color: var(--rzp-blue-cyan); }
-.log-entry.VENDOR { border-left-color: var(--rzp-blue-primary); }
+.log-entry.SCOUT { border-left-color: #38bdf8; }
+.log-entry.VENDOR { border-left-color: #60a5fa; }
 .log-entry.JUDGE { border-left-color: var(--rzp-amber); }
-.log-entry.WARDEN { border-left-color: #818cf8; }
+.log-entry.WARDEN { border-left-color: #a5b4fc; }
 .log-entry.TELLER { border-left-color: var(--rzp-green); }
 .log-entry.SCRIBE { border-left-color: #c084fc; }
-.log-entry.SYSTEM { border-left-color: var(--text-muted); }
+.log-entry.SYSTEM { border-left-color: var(--rzp-text-muted); }
 
 .log-header {
   display: flex;
   justify-content: space-between;
   font-size: 0.76rem;
-  color: var(--text-muted);
+  color: #94a3b8;
   margin-bottom: 0.25rem;
 }
 
@@ -375,31 +375,31 @@ header {
   font-weight: 700;
 }
 
-.log-entry.SCOUT .log-agent { color: var(--rzp-blue-cyan); }
+.log-entry.SCOUT .log-agent { color: #38bdf8; }
 .log-entry.VENDOR .log-agent { color: #60a5fa; }
-.log-entry.JUDGE .log-agent { color: var(--rzp-amber); }
+.log-entry.JUDGE .log-agent { color: #f59e0b; }
 .log-entry.WARDEN .log-agent { color: #a5b4fc; }
 .log-entry.TELLER .log-agent { color: #34d399; }
 
 .log-msg {
-  color: #f1f5f9;
+  color: #f8fafc;
 }
 
 /* Result Offer Card */
 .offer-card {
-  background: linear-gradient(135deg, rgba(12, 31, 64, 0.85) 0%, rgba(6, 14, 36, 0.95) 100%);
-  border: 1px solid rgba(0, 194, 255, 0.4);
+  background: #ffffff;
+  border: 1px solid var(--rzp-blue-border);
   border-radius: 14px;
   padding: 1.4rem;
   margin-top: 1rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 102, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(11, 92, 255, 0.1);
 }
 
 .offer-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--rzp-border);
   padding-bottom: 0.85rem;
   margin-bottom: 0.85rem;
 }
@@ -413,17 +413,18 @@ header {
 
 .product-name {
   font-size: 0.98rem;
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--rzp-navy-heading);
 }
 
 .product-price {
   font-weight: 700;
-  color: var(--rzp-blue-light);
+  color: var(--rzp-blue-primary);
 }
 
 .upsell-box {
-  background: rgba(0, 194, 255, 0.08);
-  border: 1px dashed rgba(0, 194, 255, 0.35);
+  background: var(--rzp-blue-light);
+  border: 1px dashed var(--rzp-blue-border);
   border-radius: 10px;
   padding: 0.85rem;
   margin: 0.85rem 0;
@@ -431,9 +432,9 @@ header {
 
 .upsell-tag {
   font-size: 0.72rem;
-  background: var(--rzp-blue-cyan);
-  color: #000000;
-  font-weight: 900;
+  background: var(--rzp-blue-primary);
+  color: #ffffff;
+  font-weight: 800;
   padding: 0.18rem 0.5rem;
   border-radius: 5px;
   text-transform: uppercase;
@@ -449,11 +450,12 @@ header {
   font-weight: 800;
   margin-top: 1.1rem;
   padding-top: 0.85rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--rzp-border);
+  color: var(--rzp-navy-heading);
 }
 
 .total-amount {
-  color: #34d399;
+  color: var(--rzp-blue-primary);
   font-size: 1.4rem;
 }
 
@@ -461,7 +463,7 @@ header {
   display: block;
   width: 100%;
   text-align: center;
-  background: linear-gradient(135deg, var(--rzp-blue-primary) 0%, var(--rzp-blue-cyan) 100%);
+  background: var(--rzp-blue-primary);
   color: #ffffff;
   font-weight: 800;
   font-size: 1.05rem;
@@ -469,21 +471,22 @@ header {
   border-radius: 12px;
   text-decoration: none;
   margin-top: 1.2rem;
-  box-shadow: 0 4px 25px rgba(0, 102, 255, 0.5);
+  box-shadow: 0 4px 16px rgba(11, 92, 255, 0.35);
   transition: all 0.25s ease;
 }
 
 .pay-btn:hover {
-  box-shadow: 0 0 30px rgba(0, 194, 255, 0.7);
+  background: var(--rzp-blue-hover);
+  box-shadow: 0 6px 22px rgba(11, 92, 255, 0.5);
   transform: translateY(-1px);
 }
 
 .alert-fallback {
-  background: rgba(244, 63, 94, 0.14);
-  border: 1px solid rgba(244, 63, 94, 0.45);
+  background: #fef2f2;
+  border: 1px solid #fecdd3;
   border-radius: 12px;
   padding: 1.1rem;
-  color: #fecdd3;
+  color: #991b1b;
   font-size: 0.9rem;
   margin-top: 1rem;
 }
@@ -498,19 +501,19 @@ header {
 .history-table th, .history-table td {
   padding: 0.85rem 1.1rem;
   text-align: left;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--rzp-border);
   font-size: 0.88rem;
 }
 
 .history-table th {
-  color: var(--text-muted);
+  color: var(--rzp-text-muted);
   font-weight: 600;
 }
 
 .chip-btn {
-  background: rgba(255, 255, 255, 0.05);
+  background: #ffffff;
   border: 1px solid var(--rzp-border);
-  color: var(--text-main);
+  color: var(--rzp-text-body);
   padding: 0.4rem 0.85rem;
   border-radius: 8px;
   font-size: 0.82rem;
@@ -519,8 +522,9 @@ header {
 }
 
 .chip-btn:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: var(--rzp-blue-cyan);
+  background: var(--rzp-bg-subtle);
+  border-color: var(--rzp-blue-primary);
+  color: var(--rzp-blue-primary);
 }
 
 .hidden {

@@ -7,10 +7,9 @@
   <link rel="stylesheet" href="styles.css">
   <style>
     body {
-      background: #030712;
+      background: #f8fafc;
       background-image: 
-        radial-gradient(circle at 50% 30%, rgba(0, 102, 255, 0.22) 0px, transparent 60%),
-        radial-gradient(circle at 80% 80%, rgba(0, 194, 255, 0.15) 0px, transparent 50%);
+        radial-gradient(circle at 50% 20%, rgba(11, 92, 255, 0.05) 0px, transparent 60%);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -19,24 +18,21 @@
       padding: 1.5rem;
     }
     .checkout-modal {
-      background: rgba(10, 22, 46, 0.92);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid rgba(0, 194, 255, 0.35);
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
       border-radius: 20px;
       width: 100%;
       max-width: 480px;
       overflow: hidden;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 35px rgba(0, 102, 255, 0.3);
+      box-shadow: 0 20px 50px -10px rgba(11, 20, 38, 0.15), 0 10px 20px -5px rgba(11, 20, 38, 0.08);
     }
     .rzp-header {
-      background: linear-gradient(135deg, #0c2340 0%, #0066ff 100%);
+      background: #0b5cff;
       padding: 1.6rem;
       color: #ffffff;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }
     .rzp-brand {
       display: flex;
@@ -52,9 +48,9 @@
       align-items: center;
       justify-content: center;
       font-weight: 900;
-      color: #0066ff;
+      color: #0b5cff;
       font-size: 1.35rem;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
     .rzp-title h3 {
       font-size: 1.15rem;
@@ -64,24 +60,25 @@
     }
     .rzp-title span {
       font-size: 0.78rem;
-      opacity: 0.85;
-      color: #bfdbfe;
+      opacity: 0.9;
+      color: #dbeafe;
     }
     .rzp-test-badge {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.22);
       border: 1px solid rgba(255, 255, 255, 0.4);
       padding: 0.3rem 0.7rem;
       border-radius: 8px;
       font-size: 0.75rem;
       font-weight: 800;
       letter-spacing: 0.5px;
+      color: #ffffff;
     }
     .rzp-body {
       padding: 1.6rem;
     }
     .amount-display {
-      background: rgba(4, 9, 20, 0.85);
-      border: 1px solid rgba(0, 102, 255, 0.25);
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
       border-radius: 14px;
       padding: 1.1rem;
       text-align: center;
@@ -89,14 +86,13 @@
     }
     .amount-label {
       font-size: 0.82rem;
-      color: #94a3b8;
+      color: #64748b;
     }
     .amount-value {
-      font-size: 2rem;
+      font-size: 2.1rem;
       font-weight: 900;
-      color: #38bdf8;
-      margin-top: 0.25rem;
-      text-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+      color: #0b5cff;
+      margin-top: 0.2rem;
     }
     .payment-methods {
       display: flex;
@@ -105,20 +101,19 @@
       margin-bottom: 1.6rem;
     }
     .method-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
       border-radius: 12px;
       padding: 0.95rem 1.1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       cursor: pointer;
-      transition: all 0.25s;
+      transition: all 0.2s;
     }
     .method-card:hover, .method-card.selected {
-      border-color: #00c2ff;
-      background: rgba(0, 194, 255, 0.1);
-      box-shadow: 0 0 15px rgba(0, 194, 255, 0.2);
+      border-color: #0b5cff;
+      background: #eff6ff;
     }
     .method-info {
       display: flex;
@@ -131,11 +126,11 @@
     .method-name {
       font-weight: 700;
       font-size: 0.92rem;
-      color: #f8fafc;
+      color: #0b1426;
     }
     .pay-now-btn {
       width: 100%;
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      background: #10b981;
       border: none;
       color: #ffffff;
       padding: 1rem;
@@ -143,12 +138,12 @@
       font-weight: 800;
       font-size: 1.05rem;
       cursor: pointer;
-      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.45);
+      box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35);
       transition: all 0.25s;
     }
     .pay-now-btn:hover {
-      background: linear-gradient(135deg, #059669 0%, #047857 100%);
-      box-shadow: 0 0 25px rgba(16, 185, 129, 0.65);
+      background: #059669;
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
       transform: translateY(-1px);
     }
     .success-screen {
@@ -158,16 +153,16 @@
     .success-icon {
       width: 68px;
       height: 68px;
-      background: rgba(16, 185, 129, 0.2);
-      color: #34d399;
+      background: #ecfdf5;
+      color: #10b981;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 2.2rem;
       margin: 0 auto 1.1rem;
-      border: 2px solid #34d399;
-      box-shadow: 0 0 20px rgba(52, 211, 153, 0.5);
+      border: 2px solid #10b981;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
     }
   </style>
 </head>
@@ -191,7 +186,7 @@
       <div class="amount-display">
         <div class="amount-label" id="descText">Negotiated Agent Purchase</div>
         <div class="amount-value" id="amountText">₹0.00</div>
-        <div style="font-size: 0.75rem; color: #64748b; margin-top: 0.35rem;" id="linkIdText">Link ID: --</div>
+        <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 0.35rem;" id="linkIdText">Link ID: --</div>
       </div>
 
       <div class="payment-methods">
@@ -200,10 +195,10 @@
             <span class="method-icon">💳</span>
             <div>
               <div class="method-name">Razorpay Test Card</div>
-              <div style="font-size: 0.75rem; color: #94a3b8;">4111 •••• •••• 1111</div>
+              <div style="font-size: 0.75rem; color: #64748b;">4111 •••• •••• 1111</div>
             </div>
           </div>
-          <span style="color: #38bdf8;">✓</span>
+          <span style="color: #0b5cff; font-weight: 800;">✓</span>
         </div>
 
         <div class="method-card" onclick="selectMethod(this, 'upi')">
@@ -211,7 +206,7 @@
             <span class="method-icon">📱</span>
             <div>
               <div class="method-name">Razorpay Test UPI / QR</div>
-              <div style="font-size: 0.75rem; color: #94a3b8;">success@razorpay</div>
+              <div style="font-size: 0.75rem; color: #64748b;">success@razorpay</div>
             </div>
           </div>
         </div>
@@ -240,7 +235,8 @@
       });
       el.classList.add('selected');
       const check = document.createElement('span');
-      check.style.color = '#38bdf8';
+      check.style.color = '#0b5cff';
+      check.style.fontWeight = '800';
       check.innerText = '✓';
       el.appendChild(check);
     }
@@ -253,9 +249,9 @@
       const content = document.getElementById('checkoutContent');
       content.innerHTML = `
         <div style="text-align: center; padding: 3.2rem 1rem;">
-          <div class="pulse-dot" style="width: 26px; height: 26px; margin: 0 auto 1.2rem; background: #00c2ff; box-shadow: 0 0 20px #00c2ff;"></div>
-          <div style="font-size: 1.15rem; font-weight: 800; color: #f8fafc;">Authorizing with Razorpay Gateway...</div>
-          <div style="font-size: 0.84rem; color: #94a3b8; margin-top: 0.5rem;">Token verification in progress</div>
+          <div class="pulse-dot" style="width: 26px; height: 26px; margin: 0 auto 1.2rem; background: #0b5cff; box-shadow: 0 0 15px #0b5cff;"></div>
+          <div style="font-size: 1.15rem; font-weight: 800; color: #0b1426;">Authorizing with Razorpay Gateway...</div>
+          <div style="font-size: 0.84rem; color: #64748b; margin-top: 0.5rem;">Token verification in progress</div>
         </div>
       `;
 
@@ -264,9 +260,9 @@
         content.innerHTML = `
           <div class="success-screen">
             <div class="success-icon">✓</div>
-            <h3 style="font-size: 1.45rem; color: #34d399; margin-bottom: 0.5rem;">Payment Successful!</h3>
-            <p style="font-size: 0.9rem; color: #cbd5e1;">Razorpay Payment ID: <strong>${payId}</strong></p>
-            <div style="background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35); padding: 1.1rem; border-radius: 12px; margin: 1.6rem 0; font-size: 0.88rem; color: #6ee7b7;">
+            <h3 style="font-size: 1.45rem; color: #10b981; margin-bottom: 0.5rem;">Payment Successful!</h3>
+            <p style="font-size: 0.9rem; color: #334155;">Razorpay Payment ID: <strong>${payId}</strong></p>
+            <div style="background: #ecfdf5; border: 1px solid #a7f3d0; padding: 1.1rem; border-radius: 12px; margin: 1.6rem 0; font-size: 0.88rem; color: #047857;">
               Captured ₹${parseFloat(amount).toFixed(2)} via Razorpay Test Mode. Transaction logged to DealFlow SQLite database.
             </div>
             <button class="pay-now-btn" onclick="window.location.href='/'">
