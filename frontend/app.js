@@ -116,11 +116,11 @@ async function runNegotiation() {
 
   resetAgentNodes();
   negotiateBtn.disabled = true;
-  negotiateBtn.innerHTML = '<span>Negotiating...</span> ⏳';
+  negotiateBtn.innerHTML = '<span>Negotiating...</span>';
 
   outputArea.innerHTML = `
-    <div style="font-size: 0.9rem; color: var(--accent-cyan); text-align: center; padding: 1.5rem; background: rgba(6, 182, 212, 0.05); border: 1px solid rgba(6, 182, 212, 0.2); border-radius: 10px;">
-      🔄 <strong>Negotiation Engine Active:</strong> Routing between Buyer, Merchant, Critic, Risk, and Payment agents...
+    <div style="font-size: 0.88rem; color: #0284c7; text-align: center; padding: 1.25rem; background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 8px;">
+      <strong>Negotiation Engine Active:</strong> Routing between Buyer, Merchant, Critic, Risk, and Payment agents...
     </div>
   `;
 
@@ -163,7 +163,7 @@ async function runNegotiation() {
     console.error(err);
     outputArea.innerHTML = `
       <div class="alert-fallback">
-        ⚠️ <strong>Error:</strong> Unable to communicate with DealFlow negotiation backend. Make sure the backend server is running.
+        <strong>Error:</strong> Unable to communicate with DealFlow negotiation backend. Make sure the backend server is running.
       </div>
     `;
   } finally {
@@ -188,12 +188,12 @@ function renderOutputCard(data) {
     if (upsell) {
       upsellHtml = `
         <div class="upsell-box">
-          <span class="upsell-tag">🚀 AI Revenue Growth Upsell</span>
+          <span class="upsell-tag">AI Revenue Growth Upsell</span>
           <div class="product-row" style="margin-top: 0.3rem;">
             <span class="product-name">${upsell.name}</span>
             <span class="product-price">+ ₹${upsell.price.toFixed(2)}</span>
           </div>
-          <div style="font-size: 0.78rem; color: var(--text-muted); font-style: italic;">"${upsell.pitch}"</div>
+          <div style="font-size: 0.78rem; color: var(--rzp-text-muted); font-style: italic;">"${upsell.pitch}"</div>
         </div>
       `;
     }
@@ -202,14 +202,14 @@ function renderOutputCard(data) {
       <div class="offer-card">
         <div class="offer-header">
           <div>
-            <div style="font-size: 0.75rem; color: #34d399; font-weight: 700; text-transform: uppercase;">✅ Negotiation Approved</div>
-            <div style="font-size: 1.1rem; font-weight: 700;">${base.name || 'Negotiated Item'}</div>
+            <div style="font-size: 0.75rem; color: #16a34a; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Negotiation Approved</div>
+            <div style="font-size: 1.1rem; font-weight: 700; color: #0f172a;">${base.name || 'Negotiated Item'}</div>
           </div>
           <span class="badge badge-rzp">Razorpay Test Mode</span>
         </div>
 
         <div class="product-row">
-          <span style="color: var(--text-muted); font-size: 0.88rem;">Base Product Price</span>
+          <span style="color: var(--rzp-text-muted); font-size: 0.88rem;">Base Product Price</span>
           <span style="font-weight: 600;">₹${base.price ? base.price.toFixed(2) : '0.00'}</span>
         </div>
 
@@ -220,12 +220,12 @@ function renderOutputCard(data) {
           <span class="total-amount">₹${offer.total_price ? offer.total_price.toFixed(2) : '0.00'}</span>
         </div>
 
-        <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.5rem; font-family: var(--font-mono);">
+        <div style="font-size: 0.78rem; color: var(--rzp-text-muted); margin-top: 0.5rem; font-family: var(--font-mono);">
           Razorpay Order ID: <strong>${orderId}</strong>
         </div>
 
         <a href="${paymentUrl}" target="_blank" class="pay-btn">
-          💳 Pay ₹${offer.total_price ? offer.total_price.toFixed(2) : '0.00'} via Razorpay Link ➔
+          Pay ₹${offer.total_price ? offer.total_price.toFixed(2) : '0.00'} via Razorpay Link ➔
         </a>
       </div>
     `;
@@ -234,11 +234,11 @@ function renderOutputCard(data) {
     const fallbackMsg = data.fallback_message || "Negotiation safely paused due to constraint limits or risk policy.";
     outputArea.innerHTML = `
       <div class="alert-fallback">
-        <div style="font-weight: 700; margin-bottom: 0.4rem; color: #f43f5e; font-size: 0.95rem;">
-          ⚠️ Graceful Fallback Handled (${status})
+        <div style="font-weight: 700; margin-bottom: 0.4rem; color: #dc2626; font-size: 0.95rem;">
+          Graceful Fallback Handled (${status})
         </div>
         <div>${fallbackMsg}</div>
-        <div style="font-size: 0.78rem; margin-top: 0.5rem; color: var(--text-muted);">
+        <div style="font-size: 0.78rem; margin-top: 0.5rem; color: var(--rzp-text-muted);">
           Negotiation state logged to SQLite audit trail. Zero unhandled exceptions.
         </div>
       </div>
